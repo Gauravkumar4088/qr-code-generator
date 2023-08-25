@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr code generator</title>
+    <script src="/qrcode.js" defer></script>
+    <style>
+        :root{
+            --primary:#47185c;
+            --primary-dark:#14001d;
+
+        }
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins",sans-serif;
+    background-color: #47185c;
+}
+.container{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+}
+.box{
+    height: auto;
+    width: 400px;
+    background-color: white;
+}
+.box:hover{
+    border: 2px solid aqua;
+    border-radius: 3px;
+}
+.box,h1{
+    text-align: center;
+    margin-top: 20px;
+}
+p{
+    text-align: center;
+    margin-top: 10px;
+}
+.input1{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #14001d;
+    border:3px solid #47185c ;
+
+}
+.input2{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px; 
+    font-size: 20px;
+    font-weight: 400;
+    transition: 0.8s;
+
+}
+.input2:hover{
+    background-color: #47185c;
+    width: 80%;
+    border: grey 2px black;
+    color: white;
+}
+form{
+    margin-top: 20px;
+    
+}
+.qr_container,img{
+    height: 125px;
+}
+.qr_container{
+    /* border:1px solid #47185c ; */
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+.qr_container.show{
+    display: flex;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>QR code Generator</h1>
+            <p>paste text to create QR code</p>
+        <form id="qrForm" >
+            <input id="qrInputText" class="input1" type="text" placeholder="Enter text"><br>
+            <button id="generateBtn" class="input2" type="submit">Generat QR code</button>
+        </form>
+        <section id="qrContainer" class="qr_container">
+            <img id="qrImage" src="QR_code_for_mobile_English_Wikipedia.svg.webp" alt=""QR code >
+        </section>
+        </div>
+    </div>
+    
+</body>
+</html>
